@@ -7,10 +7,6 @@ const routes: Routes = [
     loadChildren: './views/views.module#ViewsModule'
   },
   {
-    path: 'table',
-    loadChildren: './components/components.module#ComponentsModule'
-  },
-  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

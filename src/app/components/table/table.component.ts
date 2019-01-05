@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
     'isProgress', 
     'isCompleted', 
     'dateCreated', 
-    'dateProcessStart', 
+    'dateProgressStart', 
     'dateCompletion', 
     'forDay'
   ];

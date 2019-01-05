@@ -16,22 +16,22 @@
 
   <ng-container matColumnDef="dateCreated">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Created</th>
-    <td mat-cell *matCellDef="let element">{{ element.dateCreated }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.dateCreated | date: 'E, MMM dd, y' }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="dateProcessStart">
+  <ng-container matColumnDef="dateProgressStart">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Process Start Date</th>
-    <td mat-cell *matCellDef="let element">{{ element.dateProcessStart }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.dateProgressStart | date: 'E, MMM dd, y' }}</td>
   </ng-container>
 
   <ng-container matColumnDef="dateCompletion">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Completed On</th>
-    <td mat-cell *matCellDef="let element">{{ element.dateCompletion }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.dateCompletion | date: 'E, MMM dd, y' }}</td>
   </ng-container>
 
   <ng-container matColumnDef="forDay">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>On Day</th>
-    <td mat-cell *matCellDef="let element">{{ element.forDay }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.forDay | date: 'EEEE' }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true;"></tr>

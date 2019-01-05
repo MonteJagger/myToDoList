@@ -19,9 +19,9 @@ import { MatSortModule, MatTableModule } from '@angular/material';
     CommonModule,
     ViewsRoutingModule,
 
-        // material
-        MatSortModule,
-        MatTableModule
+    // material
+    MatSortModule,
+    MatTableModule
   ]
 })
 export class ViewsModule { }

@@ -71,8 +71,16 @@ export const LISTITEMS: ToDoItem[] = [
         dateProgressStart: null,
         dateCompletion: null,
         forDay: setTestDay(6)
-    }
-
+    },
+    {
+        toDo: "workout",
+        isProgress: false,
+        isCompleted: false,
+        dateCreated: setTestDay(2),
+        dateProgressStart: null,
+        dateCompletion: null,
+        forDay: setTestDay(0)
+    },
 ]
 
 function setToSunday() {
@@ -96,7 +104,7 @@ function setToSunday() {
         newDate.setTime(currentDate.getTime()+2*86400000);
     }   
     else if (day === 6) { // if Saturday go to upcoming Sunday
-        newDate.setTime(currentDate.getTime()+1*86400000);
+        newDate.setTime(currentDate.getTime()+86400000);
     }
     else { // if Sunday it is the same
         newDate.setTime(currentDate.getTime());
@@ -108,7 +116,7 @@ function setToSunday() {
 function setTestDay(day: number) {
     const sunday : Date = setToSunday();
     const newDate: Date = new Date();
-    newDate.setTime(sunday.getTime()-(6-day)*86400000);
+    newDate.setTime(sunday.getTime()-(7-day)*86400000);
     
     return newDate;
 }
