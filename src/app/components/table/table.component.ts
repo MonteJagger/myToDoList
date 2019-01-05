@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { LISTITEMS } from 'src/app/model/mock-date';
+
+// material stuff
+import { MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-table',
@@ -6,10 +10,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
+  listItems = LISTITEMS; // mock data
+  displayedColumns: string[] = [
+    'toDo', 
+    'isProgress', 
+    'isCompleted', 
+    'dateCreated', 
+    'dateProcessStart', 
+    'dateCompletion', 
+    'forDay'
+  ];
+  dataSource = new MatTableDataSource(this.listItems);
+
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor() { }
 
   ngOnInit() {
+    this.dataSource.sort = this.sort;
   }
 
 }

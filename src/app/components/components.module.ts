@@ -12,7 +12,7 @@ import { ItemComponent } from './item/item.component';
   ],
   imports: [
     CommonModule,
-    ComponentsRoutingModule
+    ComponentsRoutingModule,
   ]
 })
 export class ComponentsModule { }

@@ -6,6 +6,7 @@ import { WeekViewComponent } from './week-view/week-view.component';
 import { BacklogComponent } from './backlog/backlog.component';
 import { ThreeDayComponent } from './three-day/three-day.component';
 import { TableComponent } from '../components/table/table.component';
+import { MatSortModule, MatTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,11 @@ import { TableComponent } from '../components/table/table.component';
   ],
   imports: [
     CommonModule,
-    ViewsRoutingModule
+    ViewsRoutingModule,
+
+        // material
+        MatSortModule,
+        MatTableModule
   ]
 })
 export class ViewsModule { }

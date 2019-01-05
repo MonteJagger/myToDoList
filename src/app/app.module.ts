@@ -19,14 +19,14 @@ import { MatMenuModule } from '@angular/material/menu';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    
     // material
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
