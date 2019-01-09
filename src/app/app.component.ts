@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'to-do';
+
+  printDate(date: Date) {
+    console.log("parent component");
+    console.log(date);
+  }
 }

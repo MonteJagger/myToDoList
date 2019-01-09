@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./backlog.component.scss']
 })
 export class BacklogComponent implements OnInit {
-
+  fromDate: Date;
   constructor() { }
 
   ngOnInit() { }

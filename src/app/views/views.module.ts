@@ -6,7 +6,7 @@ import { WeekViewComponent } from './week-view/week-view.component';
 import { BacklogComponent } from './backlog/backlog.component';
 import { ThreeDayComponent } from './three-day/three-day.component';
 import { TableComponent } from '../components/table/table.component';
-import { MatSortModule, MatTableModule } from '@angular/material';
+import { MatSortModule, MatTableModule, MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { MatSortModule, MatTableModule } from '@angular/material';
 
     // material
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule
   ]
 })
 export class ViewsModule { }

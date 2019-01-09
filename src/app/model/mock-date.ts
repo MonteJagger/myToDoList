@@ -13,6 +13,15 @@ export const LISTITEMS: ToDoItem[] = [
         toDo: "finish hw",
         isProgress: true,
         isCompleted: false,
+        dateCreated: new Date('jan-1-2019'),
+        dateProgressStart: setTestDay(1),
+        dateCompletion: null,
+        forDay: setTestDay(1)
+    },
+    {
+        toDo: "finish hw",
+        isProgress: true,
+        isCompleted: false,
         dateCreated: setTestDay(1),
         dateProgressStart: setTestDay(1),
         dateCompletion: null,

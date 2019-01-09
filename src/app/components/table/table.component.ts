@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { LISTITEMS } from 'src/app/model/mock-date';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { TodoService } from '../../todo.service';
 
 // material stuff
 import { MatTableDataSource, MatSort } from '@angular/material';
+import { ToDoItem } from 'src/app/model/todo-item';
+import { ItemComponent } from '../item/item.component';
 
 @Component({
   selector: 'app-table',
@@ -10,7 +12,15 @@ import { MatTableDataSource, MatSort } from '@angular/material';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  listItems = LISTITEMS; // mock data
+  
+  constructor(private todoService: TodoService) { }
+  fromDate: Date;
+  endDate: Date;
+
+
+  // table
+  listItems: ToDoItem[] = this.todoService.getMockData(); 
+  
   displayedColumns: string[] = [
     'toDo', 
     'isProgress', 
@@ -24,10 +34,19 @@ export class TableComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.fromDate = this.todoService.getFromDate();
+    this.endDate = this.todoService.getEndDate();
+    this.filterDates();
   }
 
+  filterDates() {
+    const filteredList = this.listItems.filter(
+      item => item.dateCreated.getTime() >= this.fromDate.getTime() && item.dateCreated.getTime() >= this.endDate.getTime()
+    );
+
+    this.dataSource = new MatTableDataSource(this.listItems);
+  }
 }
